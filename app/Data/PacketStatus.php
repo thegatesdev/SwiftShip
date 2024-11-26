@@ -2,7 +2,7 @@
 
 namespace App\Data;
 
-enum PackageStatus : string
+enum PacketStatus : string
 {
     case INVALID = 'invalid';
     case WH_PENDING = 'wh_pending';
