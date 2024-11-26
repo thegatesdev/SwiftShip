@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('receiver_email');
             $table->boolean('is_mailbox');
             $table->boolean('needs_signature');
-            $table->string('warehouse_location', 4);
+            $table->unsignedSmallInteger('warehouse_location');
         });
     }
 
