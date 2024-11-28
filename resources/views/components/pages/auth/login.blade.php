@@ -9,18 +9,9 @@
     <div class="card content shadow secondary apply">
         <form class="flex center gap" wire:submit="login">
             <h3>Log in</h3>
-            <span class="flex">
-                <label for="email">Email</label>
-                <input type="email" id="email" wire:model="email" autocomplete="username" required>
-            </span>
-            <span class="flex">
-                <label for="password">Wachtwoord</label>
-                <input type="password" id="password" wire:model="password" autocomplete="current-password" required>
-            </span>
-            <span>
-                <label for="remember">Ingelogd blijven</label>
-                <input type="checkbox" id="remember" wire:model="remember">
-            </span>
+            <x-parts.input ver type="email" value="Email" autocomplete="username" required />
+            <x-parts.input ver type="password" value="Wachtwoord" autocomplete="current-password" required />
+            <x-parts.input type="checkbox" name="remember" value="Ingelogd blijven" autocomplete="current-password" />
             <input type="submit" value="Ok" class="btn solid swap fill primary">
             @csrf
         </form>
