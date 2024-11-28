@@ -2,7 +2,7 @@
 
 <x-layouts.base :$title {{ $attributes->class('theme-example dark apply flex fill noselect') }}>
     @isset($header)
-        <header class="primary apply flex row between">
+        <header class="primary apply flex row between pad">
             {{ $header }}
         </header>
     @endisset
