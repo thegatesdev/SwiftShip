@@ -1,1 +1,0 @@
-<img src="{{ Vite::asset('resources/images/brand/logo.png') }}" alt="SpeedyPacket Logo">
