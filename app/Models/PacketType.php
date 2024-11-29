@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class PacketType extends Model
 {
-    protected $timestamps = false;
+    public $timestamps = false;
     protected $fillable = [
         'user_id',
         'name',

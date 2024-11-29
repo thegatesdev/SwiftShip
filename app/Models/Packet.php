@@ -10,7 +10,7 @@ class Packet extends Model
 {
     use HasUlids;
 
-    protected $timestamps = false;
+    public $timestamps = false;
     protected $fillable = [
         'packet_type_id',
         'receiver_address_id',
