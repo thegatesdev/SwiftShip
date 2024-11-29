@@ -8,4 +8,5 @@
 <span @isset($ver)class="flex"@endisset>
     <label for="{{ $name ?? $type }}">{{ $value }}</label>
     <input type="{{ $type }}" id="{{ $name ?? $type }}" @if($wire) wire:model="{{ $name ?? $type }}" @endif {{ $attributes }} placeholder="{{ $value }}...">
+    @error($name ?? $type) <span class="negative apply">{{ $message }}</span> @enderror 
 </span>
