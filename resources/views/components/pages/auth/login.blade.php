@@ -12,7 +12,7 @@
             <x-parts.input ver type="email" value="Email" autocomplete="username" required />
             <x-parts.input ver type="password" value="Wachtwoord" autocomplete="current-password" required />
             <x-parts.input type="checkbox" name="remember" value="Ingelogd blijven" autocomplete="current-password" />
-            <input type="submit" value="Ok" class="btn solid swap fill primary">
+            <input type="submit" value="Inloggen" class="btn solid swap fill primary">
             @csrf
         </form>
     </div>
