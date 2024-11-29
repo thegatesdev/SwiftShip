@@ -1,6 +1,8 @@
 <?php
 
 use App\View\Components\Pages\App\Dashboard as AppDashboard;
+use App\View\Components\Pages\App\PacketType\Create as PTCreate;
+use App\View\Components\Pages\App\PacketType\Update as PTUpdate;
 use App\View\Components\Pages\Auth\Login;
 use App\View\Components\Pages\Auth\Login2fa;
 use App\View\Components\Pages\Auth\PasswordConfirm;
@@ -20,4 +22,6 @@ Route::get('/confirm', PasswordConfirm::class)->name('password.confirm');
 # App
 Route::middleware(['auth'])->prefix('app')->name('app.')->group(function () {
     Route::get('/', AppDashboard::class)->name('dashboard');
+    Route::get('/type/new', PTCreate::class)->name('pt.create');
+    Route::get('/type/{packetType}', PTUpdate::class)->name('pt.update');
 });
