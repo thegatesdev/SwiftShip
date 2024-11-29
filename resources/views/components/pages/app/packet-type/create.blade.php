@@ -22,7 +22,7 @@
                 <x-parts.input ver type="text" name="form.description" value="Omschrijving" required />
             </span>
             <input type="submit" value="Opslaan" class="btn solid swap primary">
-            <button type="button" wire:click="next" class="btn solid swap secondary">Nieuw pakket aanmaken</button>
+            <button type="button" wire:click="next" class="btn solid swap active">Nieuw pakket aanmaken</button>
         </form>
     </div>    
 </div>
