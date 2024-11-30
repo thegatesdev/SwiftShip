@@ -3,7 +3,6 @@
 namespace App\Livewire\Forms;
 
 use App\Models\PacketType;
-use App\Models\User;
 use Livewire\Attributes\Validate;
 use Livewire\Form;
 
@@ -12,7 +11,7 @@ class PacketTypeForm extends Form
     public ?PacketType $packetType;
 
     #[Validate]
-    public ?User $user;
+    public ?int $user_id = null;
 
     #[Validate('required|min:5')]
     public string $name = '';
@@ -25,13 +24,13 @@ class PacketTypeForm extends Form
         $this->packetType = $packetType;
         $this->name = $packetType->name;
         $this->description = $packetType->description;
-        $this->user = $packetType->user;
+        $this->user_id = $packetType->user_id;
     }
 
     public function store(): PacketType
     {
         $this->validate();
-        return PacketType::create($this->only(['name', 'description', 'user_id']));
+        return PacketType::create($this->all());
     }
 
     public function update()

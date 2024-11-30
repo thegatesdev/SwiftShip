@@ -4,10 +4,11 @@ namespace App\View\Components\Pages\App\PacketType;
 
 use App\Livewire\Forms\PacketTypeForm;
 use App\Models\PacketType;
+use App\Models\User;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
-#[Title('Verander een type')]
+#[Title('Pas een type aan')]
 class Update extends Component
 {
     public PacketTypeForm $form;
@@ -20,17 +21,18 @@ class Update extends Component
     public function save()
     {
         $this->form->update();
-        session()->flash('success', 'Post succesvol geupdated');
+        session()->flash('success', 'Pakket-type succesvol aangepast');
     }
 
     public function next()
     {
         $this->save();
-        // $this->redirectRoute('app.packet.create');
+        $this->redirectRoute('app.packet.create');
     }
 
     public function render()
     {
-        return view('components.pages.app.packet-type.create');
+        $users = User::all(['id', 'email']);
+        return view('components.pages.app.packet-type.create', compact('users'));
     }
 }

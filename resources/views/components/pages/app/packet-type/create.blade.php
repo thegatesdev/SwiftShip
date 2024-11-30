@@ -20,6 +20,15 @@
             <span class="fill flex gap">
                 <x-parts.input ver type="text" name="form.name" value="Naam" required />
                 <x-parts.input ver type="text" name="form.description" value="Omschrijving" required />
+                <span  class="flex">
+                    <label for="form.user_id">Gebruiker</label>
+                    <select title="form.user" wire:model="form.user_id">
+                        <option value>-- Geen gebruiker --</option>
+                        @foreach ($users as $user)
+                            <option value="{{ $user->id }}">{{ $user->email }}</option>
+                        @endforeach
+                    </select>
+                </span>
             </span>
             <input type="submit" value="Opslaan" class="btn solid swap primary">
             <button type="button" wire:click="next" class="btn solid swap active">Nieuw pakket aanmaken</button>
