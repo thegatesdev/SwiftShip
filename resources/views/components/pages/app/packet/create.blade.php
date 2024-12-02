@@ -32,6 +32,7 @@
                 <x-parts.input type="checkbox" name="form.signature" value="Vereist een handtekening" />
             </span>
             <input type="submit" value="Opslaan" class="btn solid swap primary">
+            <button type="button" wire:click="markSent" class="btn solid @if($sent) inactive @else active swap @endif " @if($sent) disabled @endif>Markeer als verzonden</button>
         </form>
     </div>    
 </div>

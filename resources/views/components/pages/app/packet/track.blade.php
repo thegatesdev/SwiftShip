@@ -16,10 +16,13 @@
         <h3>Pakket: {{ $packet->packetType->name }}</h3>
         <p>{{ $packet->packetType->description }}</p>
     </span>
-    <span class="secondary apply">
+    <span class="secondary apply pad">
         @foreach ($packet->updates as $update)
             <ul class="list col">
-                <li>{{ $update->status->label() }}</li>
+                <li>
+                    {{ $update->created_at }}
+                    <b>{{ $update->status->label() }}</b>
+                </li>
             </ul>
         @endforeach
     </span>
