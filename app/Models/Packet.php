@@ -10,6 +10,10 @@ class Packet extends Model
 {
     use HasUlids;
 
+    protected $primaryKey = 'id';
+    protected $keyType = 'string';
+    public $incrementing = false;
+
     public $timestamps = false;
     protected $fillable = [
         'packet_type_id',
