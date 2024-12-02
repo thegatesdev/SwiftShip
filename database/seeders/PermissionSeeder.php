@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 use App\Authorization\PermissionsEnum;
+use App\Authorization\RolesEnum;
 use Illuminate\Database\Seeder;
-use RolesEnum;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
