@@ -1,12 +1,12 @@
 @props(['title', 'header', 'naviation', 'footer'])
 
-<x-layouts.base :$title {{ $attributes->class('theme-example dark apply flex fill noselect') }}>
+<x-layouts.base :$title {{ $attributes->class('theme-example dark apply flex fill noselect scroll') }}>
     @isset($header)
         <header class="primary apply flex row between pad">
             {{ $header }}
         </header>
     @endisset
-    <div class="flex row fill">
+    <div id="main" class="flex row fill scroll">
         @isset($navigation)
             <nav class="secondary apply">
                 {{ $navigation ?? '' }}

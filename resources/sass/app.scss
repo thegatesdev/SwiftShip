@@ -1,2 +1,31 @@
 @use "TACSS/tacss.scss";
 @use "TACSS/themes/example.scss";
+
+footer, header
+{
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 600px) {
+    #main {
+        flex-direction: column;
+    }
+
+    header {
+        h4 {
+            font-size: 1.6rem;
+        }
+        .logo
+        {
+            height: 2rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 370px) {
+    header {
+        h4 {
+            display: none;
+        }
+    }
+}

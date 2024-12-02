@@ -9,26 +9,22 @@
     <x-parts.copyright />
     <x-parts.contact />
 </x-slot:footer>
-<div class="fill flex">
+<div class="fill flex scroll">
     @if(session('success'))
         <div class="fill-x center-txt positive apply">
             <p>{{ session('success') }}</p>
         </div>
     @endif
-    <div class="fill flex center pad">
-        <form class="fill flex between gap" wire:submit="save">
+    <div class="fill flex center pad scroll">
+        <form class="fill flex between gap scroll max" wire:submit="save">
             <span class="fill flex gap">
                 <x-parts.input ver type="text" name="form.name" value="Naam" required />
                 <x-parts.input ver type="text" name="form.description" value="Omschrijving" required />
-                <span  class="flex">
-                    <label for="form.user_id">Gebruiker</label>
-                    <select title="form.user" wire:model="form.user_id">
-                        <option value>-- Geen gebruiker --</option>
-                        @foreach ($users as $user)
+                <x-parts.select name="form.user_id" value="Gebruiker">
+                    @foreach ($users as $user)
                             <option value="{{ $user->id }}">{{ $user->email }}</option>
-                        @endforeach
-                    </select>
-                </span>
+                    @endforeach
+                </x-parts.select>
             </span>
             <input type="submit" value="Opslaan" class="btn solid swap primary">
             <button type="button" wire:click="next" class="btn solid swap active">Nieuw pakket aanmaken</button>
