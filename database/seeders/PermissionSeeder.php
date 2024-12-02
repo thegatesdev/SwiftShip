@@ -21,6 +21,8 @@ class PermissionSeeder extends Seeder
 
         app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
 
+        $role = Role::create(['name' => RolesEnum::ADMIN]);
+
         $role = Role::create(['name' => RolesEnum::DELIVERY]);
 
         $role = Role::create(['name' => RolesEnum::SENDER]);
@@ -29,5 +31,6 @@ class PermissionSeeder extends Seeder
 
         $role = Role::create(['name' => RolesEnum::WAREHOUSE]);
 
+        app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
     }
 }
