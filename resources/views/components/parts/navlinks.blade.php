@@ -5,4 +5,7 @@
     @can('packet_create')
     <li><a href="{{ route('app.packet.create') }}" wire:navigate>Nieuw Pakket</a></li>
     @endcan
+    @can('traffic_view')
+    <li><a href="{{ route('app.traffic.view') }}" wire:navigate>Verkeersinfo</a></li>
+    @endcan
 </ul>

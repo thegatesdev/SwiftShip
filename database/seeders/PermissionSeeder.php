@@ -24,6 +24,7 @@ class PermissionSeeder extends Seeder
         $role = Role::create(['name' => RolesEnum::ADMIN]);
 
         $role = Role::create(['name' => RolesEnum::DELIVERY]);
+        $role->givePermissionTo(PermissionsEnum::TRAFFIC_VIEW);
 
         $role = Role::create(['name' => RolesEnum::SENDER]);
         $role->givePermissionTo(PermissionsEnum::PACKET_CREATE);
