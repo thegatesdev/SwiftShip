@@ -28,6 +28,8 @@ Route::middleware(['auth'])->prefix('app')->name('app.')->group(function () {
     Route::get('/type/new', PTCreate::class)->name('pt.create');
     Route::get('/type/{packetType}', PTUpdate::class)->name('pt.update');
 
-    Route::get('/packet/new', PacketCreate::class)->name('packet.create');
-    Route::get('/packet/{packet}', PacketUpdate::class)->name('packet.update');
+    Route::get('/packet/new', PacketCreate::class)->name('packet.create')
+        ->middleware('can:packet_type_create');
+    Route::get('/packet/{packet}', PacketUpdate::class)->name('packet.update')
+        ->middleware('can:packet_create');
 });
