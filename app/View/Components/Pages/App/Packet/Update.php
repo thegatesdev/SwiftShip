@@ -35,6 +35,7 @@ class Update extends Component
     {
         $this->sent = true;
         PacketUpdate::create(['packet_id' => $this->packet->id, 'status' => PacketStatus::WH_PENDING->value]);
+        session()->flash('success', 'Pakket gemarkeerd als verzonden');
     }
 
     public function render()
