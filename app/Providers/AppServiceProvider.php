@@ -2,10 +2,10 @@
 
 namespace App\Providers;
 
+use App\Authorization\RolesEnum;
 use Illuminate\Auth\Middleware\RedirectIfAuthenticated;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
-use RolesEnum;
 
 class AppServiceProvider extends ServiceProvider
 {

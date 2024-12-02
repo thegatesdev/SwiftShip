@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Authorization;
+
 enum RolesEnum: string
 {
     case ADMIN = 'admin';
