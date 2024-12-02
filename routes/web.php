@@ -5,6 +5,7 @@ use App\View\Components\Pages\App\PacketType\Create as PTCreate;
 use App\View\Components\Pages\App\PacketType\Update as PTUpdate;
 use App\View\Components\Pages\App\Packet\Update as PacketUpdate;
 use App\View\Components\Pages\App\Packet\Create as PacketCreate;
+use App\View\Components\Pages\App\Packet\Track as PacketTrack;
 use App\View\Components\Pages\App\TrafficAPI;
 use App\View\Components\Pages\Auth\Login;
 use App\View\Components\Pages\Auth\Login2fa;
@@ -39,3 +40,5 @@ Route::middleware(['auth'])->prefix('app')->name('app.')->group(function () {
     Route::get('/traffic', TrafficAPI::class)->name('traffic.view')
         ->middleware('can:traffic_view');
 });
+
+Route::get('/app/packet/track/{packet}', PacketTrack::class)->name('app.packet.track');
