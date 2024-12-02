@@ -19,11 +19,11 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/login', Login::class)->name('login');
     Route::get('/2fa', Login2fa::class)->name('two-factor.login');
 });
-Route::get('/confirm', PasswordConfirm::class)->name('password.confirm');
 
 # App
 Route::middleware(['auth'])->prefix('app')->name('app.')->group(function () {
     Route::get('/', AppDashboard::class)->name('dashboard');
+    Route::get('/confirm', PasswordConfirm::class)->name('password.confirm');
 
     Route::get('/type/new', PTCreate::class)->name('pt.create');
     Route::get('/type/{packetType}', PTUpdate::class)->name('pt.update');
