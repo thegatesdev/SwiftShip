@@ -16,13 +16,13 @@ class Create extends Component
     {
         $stored = $this->form->store();
         session()->flash('success', 'Pakket-type succesvol aangemaakt');
-        return $this->redirectRoute('app.pt.update', $stored);
+        return $this->redirectRoute('app.pt.update', $stored, navigate: true);
     }
 
     public function next()
     {
         $this->save();
-        $this->redirectRoute('app.packet.create');
+        $this->redirectRoute('app.packet.create', navigate: true);
     }
 
     public function render()

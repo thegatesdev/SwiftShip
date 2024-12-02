@@ -27,7 +27,7 @@ class Update extends Component
     public function next()
     {
         $this->save();
-        $this->redirectRoute('app.packet.create');
+        $this->redirectRoute('app.packet.create', navigate: true);
     }
 
     public function render()
